@@ -10,9 +10,11 @@ https://v17.angular.io/guide/versions
 https://angular.dev/reference/versions
 
 
-## Referencia específica de node en el package 
+## Referencia específica de node en el package (/@angular/cli/package.json)
+
 https://www.npmjs.com/package/@angular/cli/v/16.2.14?activeTab=code
 
+https://www.npmjs.com/package/@angular/cli/v/20.0.0?activeTab=code
 
 ## Instalar docker
 
@@ -45,7 +47,8 @@ Esto debido a que en angular y node tienes diferentes convenciones a seguir
 
 > #### Crear un docker de prueba
 
-`docker run -it --name docker-build-test -v $(pwd):/project developertoyosa/angular-dev:xx.y-nodexx.yy`
+`docker run --rm -it --name docker-build-test -v $(pwd):/app angular-dev:xx.y-nodexx.yy`
+
 
 > #### Publicar docker 
 
