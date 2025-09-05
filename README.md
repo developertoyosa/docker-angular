@@ -42,21 +42,30 @@ Ejemplo:
 
 Esto debido a que en angular y node tienes diferentes convenciones a seguir
 
+Ejemplo (dev)
+`docker buildx build -t developertoyosa/angular:xx.y-nodexx.yy-dev .`
 
-`docker buildx build -t angular-dev:xx.y-nodexx.yy .`
+Ejemplo (test-prod)
+`docker buildx build -t developertoyosa/angular:xx.y-nodexx.yy .`
 
 > #### Crear un docker de prueba
 
-`docker run --rm -it --name docker-build-test -v $(pwd):/app angular-dev:xx.y-nodexx.yy`
+Ejemplo (dev)
+`docker run --rm -it --name docker-build-test -v $(pwd):/app developertoyosa/angular:xx.y-nodexx.yy-dev`
+
+Ejemplo (test-prod)
+`docker run --rm -it --name docker-build-test -v $(pwd):/app developertoyosa/angular:xx.y-nodexx.yy`
 
 
 > #### Publicar docker 
 
-`docker buildx build -t developertoyosa/angular-dev:xx.y-nodexx.yy .`
-
 `docker login`
 
-`docker push developertoyosa/angular-dev:xx.y-nodexx.yy`
+Ejemplo (dev)
+`docker push developertoyosa/angular:xx.y-nodexx.yy-dev`
+
+Ejemplo (test-prod)
+`docker push developertoyosa/angular:xx.y-nodexx.yy`
 
 > ## Verificación de versiones
 `node -v`

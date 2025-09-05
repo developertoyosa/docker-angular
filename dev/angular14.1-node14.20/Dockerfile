@@ -2,10 +2,12 @@
 FROM node:14.20-alpine
 
 #carpeta predeterminada
-WORKDIR /project
+WORKDIR /app
 
-#actualiza dependencias
-RUN apk update
+RUN apk update && apk add --no-cache \
+    rsync \
+    openssh-client \
+    sshpass
 
 #instalación del framework
 RUN npm install -g @angular/cli@14.1.3
